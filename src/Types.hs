@@ -1,3 +1,4 @@
+{-# LANGUAGE GeneralizedNewtypeDeriving #-}
 module Types
     ( Digit
     , zero
@@ -17,7 +18,7 @@ module Types
     , verified
     ) where
 
-newtype Digit = Digit { unDigit :: Int } deriving (Eq, Ord)
+newtype Digit = Digit { unDigit :: Int } deriving (Enum, Eq, Ord)
 
 instance Show Digit where
     show = show . unDigit
